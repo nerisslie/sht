@@ -23,6 +23,9 @@ import android.widget.TextView
 
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
+import android.widget.Toast
+import com.example.nerissa.siakad.database.SiakadDb
+import com.example.nerissa.siakad.entity.Mahasiswa
 
 import kotlinx.android.synthetic.main.activity_login.*
 /**
@@ -34,9 +37,27 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
      */
     private var mAuthTask: UserLoginTask? = null
 
+    private lateinit var db : SiakadDb
+
+    lateinit var list : List<Mahasiswa>
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_login)
+
+        AsyncTask.execute {
+            // Insert Data
+            list = SiakadDb.getInstance(this).mhsAdd().loadAllMhs()
+            Toast.makeText(this, list[0].name, Toast.LENGTH_SHORT).show()
+
+        }
+//        db = SiakadDb.getInstance(this);
+//
+//        var list = db.mhsAdd().loadAllMhs();
+
+        //Toast.makeText(this, list[0].name, Toast.LENGTH_SHORT).show()
+
         // Set up the login form.
         populateAutoComplete()
         password.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->

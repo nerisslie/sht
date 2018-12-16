@@ -1,8 +1,10 @@
-package com.example.nerissa.siakad;
+package com.example.nerissa.siakad.dao;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+
+import com.example.nerissa.siakad.entity.Mahasiswa;
 
 import java.util.List;
 
@@ -18,6 +20,6 @@ public interface MhsAdd {
     Mahasiswa loadMhsByNim(String nim, String password);
 
     @Insert
-    public void addMhs(Mahasiswa mhs);
+    public void addMhs(Mahasiswa[] mhs);
 
 }
