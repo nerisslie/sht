@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".LoginActivity">
+    tools:context=".activity.LoginActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -28,15 +28,14 @@
 
         <LinearLayout
             android:id="@+id/email_login_form"
-            android:layout_width="600px"
-            android:layout_height="1800px"
-            android:layout_marginLeft="52px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="250dp"
                 android:layout_height="150dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="40dp"
                 android:src="@drawable/logo" />
 
             <android.support.design.widget.TextInputLayout
@@ -98,7 +97,7 @@
                     android:paddingTop="10dp"
                     android:text="Lupa Password ? "
                     android:textSize="35px"
-                    android:layout_marginLeft="40dp"/>
+                    android:layout_marginLeft="80dp"/>
 
                 <TextView
                     android:layout_width="match_parent"

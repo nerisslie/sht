@@ -1,4 +1,4 @@
-package com.example.nerissa.siakad
+package com.example.nerissa.siakad.activity
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -24,6 +24,7 @@ import android.widget.TextView
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
 import android.widget.Toast
+import com.example.nerissa.siakad.R
 import com.example.nerissa.siakad.database.SiakadDb
 import com.example.nerissa.siakad.entity.Mahasiswa
 
@@ -46,17 +47,17 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
 
         setContentView(R.layout.activity_login)
 
-        AsyncTask.execute {
-            // Insert Data
-            list = SiakadDb.getInstance(this).mhsAdd().loadAllMhs()
-            Toast.makeText(this, list[0].name, Toast.LENGTH_SHORT).show()
-
-        }
-//        db = SiakadDb.getInstance(this);
+//        AsyncTask.execute {
+//            // Insert Data
+//            list = SiakadDb.getInstance(this).mhsAdd().loadAllMhs()
+//            Toast.makeText(this, list[0].name, Toast.LENGTH_SHORT).show()
 //
-//        var list = db.mhsAdd().loadAllMhs();
+//        }
+        db = SiakadDb.getInstance(this);
 
-        //Toast.makeText(this, list[0].name, Toast.LENGTH_SHORT).show()
+        var list = db.nilaiAdd().loadAllNilai();
+
+        Toast.makeText(this, list[5].nim_mhs, Toast.LENGTH_SHORT).show()
 
         // Set up the login form.
         populateAutoComplete()

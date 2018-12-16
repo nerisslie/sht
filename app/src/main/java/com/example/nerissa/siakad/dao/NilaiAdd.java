@@ -17,6 +17,6 @@ public interface NilaiAdd {
     Nilai loadNilaiByNim(String nim_mhs);
 
     @Insert
-    public void addNilai(Nilai nilai);
+    public void addNilai(Nilai nilai11, Nilai nilai21, Nilai nilai31, Nilai nilai41, Nilai nilai5, Nilai nilai1, Nilai nilai2, Nilai nilai3, Nilai nilai4, Nilai nilai);
 
 }

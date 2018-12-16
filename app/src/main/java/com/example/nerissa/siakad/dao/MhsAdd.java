@@ -20,6 +20,6 @@ public interface MhsAdd {
     Mahasiswa loadMhsByNim(String nim, String password);
 
     @Insert
-    public void addMhs(Mahasiswa[] mhs);
+    public void addMhs(Mahasiswa mhs1, Mahasiswa mhs);
 
 }
